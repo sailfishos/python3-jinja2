@@ -10,7 +10,8 @@ Summary:        General purpose template engine
 Group:          Development/Languages
 License:        BSD
 URL:            http://jinja.pocoo.org/
-Source0:        http://pypi.python.org/packages/source/J/%{upstream_name}/%{upstream_name}-%{version}.tar.gz
+# Source   http://pypi.python.org/packages/source/J/%{upstream_name}/%{upstream_name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
@@ -29,7 +30,7 @@ principles and adding functionality useful for templating
 environments.
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n %{name}-%{version}/%{name}
 
 # cleanup
 find . -name '*.pyo' -o -name '*.pyc' -delete
