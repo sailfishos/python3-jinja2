@@ -1,16 +1,9 @@
-# Adapted from Fedora's packaging (2014-02-17)
-# http://pkgs.fedoraproject.org/cgit/python-jinja2.git/tree/python-jinja2.spec
-
-%global upstream_name Jinja2
-
 Name:           python-jinja2
 Version:        2.7.2
 Release:        1
 Summary:        General purpose template engine
-Group:          Development/Languages
 License:        BSD
 URL:            http://jinja.pocoo.org/
-# Source   http://pypi.python.org/packages/source/J/%{upstream_name}/%{upstream_name}-%{version}.tar.gz
 Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-devel
