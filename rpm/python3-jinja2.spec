@@ -1,4 +1,4 @@
-Name:           python-jinja2
+Name:           python3-jinja2
 Version:        2.7.2
 Release:        1
 Summary:        General purpose template engine
@@ -6,10 +6,10 @@ License:        BSD
 URL:            http://jinja.pocoo.org/
 Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
-BuildRequires:  python-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-markupsafe
-Requires:       python-markupsafe
+BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-markupsafe
+Requires:       python3-markupsafe
 
 %description
 Jinja2 is a template engine written in pure Python.  It provides a
@@ -23,7 +23,7 @@ principles and adding functionality useful for templating
 environments.
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%autosetup -n %{name}-%{version}/python-jinja2
 
 # cleanup
 find . -name '*.pyo' -o -name '*.pyc' -delete
@@ -32,11 +32,11 @@ find . -name '*.pyo' -o -name '*.pyc' -delete
 sed -i 's|\r$||g' LICENSE
 
 %build
-%{__python} setup.py build
+%py3_build
 
 %install
-%{__python} setup.py install -O1 --skip-build \
-            --root %{buildroot}
+%py3_install
 
 %files
-%{python_sitelib}/*
+%license LICENSE
+%{python3_sitelib}/*
