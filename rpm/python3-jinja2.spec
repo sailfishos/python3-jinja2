@@ -1,5 +1,5 @@
 Name:           python3-jinja2
-Version:        2.7.2
+Version:        3.1.2
 Release:        1
 Summary:        General purpose template engine
 License:        BSD
@@ -28,9 +28,6 @@ environments.
 # cleanup
 find . -name '*.pyo' -o -name '*.pyc' -delete
 
-# fix EOL
-sed -i 's|\r$||g' LICENSE
-
 %build
 %py3_build
 
@@ -38,5 +35,5 @@ sed -i 's|\r$||g' LICENSE
 %py3_install
 
 %files
-%license LICENSE
+%license LICENSE.rst
 %{python3_sitelib}/*
