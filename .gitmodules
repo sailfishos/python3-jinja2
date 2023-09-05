@@ -1,0 +1,3 @@
+[submodule "python-jinja2"]
+	path = python-jinja2
+	url = https://github.com/sailfishos-mirror/jinja.git
