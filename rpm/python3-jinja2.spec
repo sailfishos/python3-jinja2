@@ -1,5 +1,5 @@
 Name:           python3-jinja2
-Version:        3.1.2
+Version:        3.1.6
 Release:        1
 Summary:        General purpose template engine
 License:        BSD
@@ -7,7 +7,8 @@ URL:            http://jinja.pocoo.org/
 Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+BuildRequires:  pyproject-rpm-macros
+BuildRequires:  python3-pip
 BuildRequires:  python3-markupsafe
 Requires:       python3-markupsafe
 
@@ -29,10 +30,10 @@ environments.
 find . -name '*.pyo' -o -name '*.pyc' -delete
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
 
 %files
 %license LICENSE.rst
